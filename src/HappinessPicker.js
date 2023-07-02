@@ -1,4 +1,4 @@
-function HappinessPicker({ setParentState }) {
+function HappinessPicker({ setParentState, score }) {
     const emojiScores = ['😦', '😞', '😐', '🙂', '😁'];
     
     const addScoreHandler = (index) => {
@@ -10,7 +10,7 @@ function HappinessPicker({ setParentState }) {
     <button
         key={index}
         style={{
-        backgroundColor: "white"
+        backgroundColor: score === index ? "blue" : "white"
         }}
         onClick={() => {addScoreHandler(index)}}
     >

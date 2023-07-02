@@ -7,28 +7,19 @@ function OverallFeedback(){
     const [serviceScore, setServiceScore] = useState(0)
     const [valueScore, setValueScore] = useState(0)
 
-    // const[foodColor, setFoodColor] = useState()
-    // const[serviceColor, setServiceColor] = useState()
-    // const[valueColor, setValueColor] = useState()
-
-    let totalScore
-    // setFoodColor("blue")
-    // setServiceColor("blue")
-    // setValueColor("blue")
-
-    totalScore = foodScore + serviceScore + valueScore
+    let totalScore = foodScore + serviceScore + valueScore
 
     return(
         <div>
             <h5>Let us know how we did</h5>
             <h6>Food</h6>
-            <HappinessPicker setParentState={setFoodScore} />       
+            <HappinessPicker setParentState={setFoodScore} score={foodScore}/>       
 
             <h6>Service</h6>
-            <HappinessPicker setParentState={setServiceScore} />
+            <HappinessPicker setParentState={setServiceScore} score={serviceScore}/>
 
             <h6>Value for money</h6>
-            <HappinessPicker setParentState={setValueScore} />
+            <HappinessPicker setParentState={setValueScore} score={valueScore}/>
 
             <h6>Total Score: {totalScore}/12</h6>
         </div>
